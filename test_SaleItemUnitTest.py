@@ -44,3 +44,10 @@ class TestSaleItem(unittest.TestCase):
 		
 		itemWithFreeShipping = SaleItem(['10', '2', 'FSTestItem', 'FS'])
 		self.assertEqual(itemWithFreeShipping.getFreeShipping(), True)
+
+	def test_GetNotFreeShipping(self):
+
+		# Tests default item in setUp
+
+		itemSansFreeShipping = SaleItem(["1500", "10000", "Textbook"])
+		self.assertEqual(itemSansFreeShipping.getFreeShipping(), False)
